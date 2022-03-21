@@ -40,7 +40,6 @@ const requestListener = (req, res) => {
     deleteTodo(data)
   } else if (url.startsWith("/todos/") && method === "PATCH") {
     req.on('end', () => patchTodo(data,body));
-    patchTodo(data)
   } else if (method === "OPTIONS") {
     res.writeHead(200, headers)
     res.end()
